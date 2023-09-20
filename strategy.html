@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initiale-scale=1.0">
+    <title>strategy</title>
+    <!--main css file-->
+    <link rel="stylesheet" href="./CSS/style.css">
+    <!--font awesome L.B-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--normalise-->
+    <link rel="stylesheet" href="./CSS/normalise.css">
+  </head>
+</html>
+<body>
+  <!--header------------>
+  <!--strategie_info had same style as about-info section------------>
+  <section class="about-info">
+
+    <div class="container">
+      <h1>Strategie</h1>
+      <p>Welcome to the world of Front End Development! At <span class="special">RYL</span>, we take pride in crafting captivating and seamless user experiences that leave a lasting impacact.</p>
+      <p>As a Front End Web Developer, I bring creativity and technical expertise together to breathe life into designs and transform them into functional masterpieces. From pixel-perfect layouts to intuitive interactions.</p>
+      <p>I thrive on pushing the boundaries of innovation to deliver websites and applications that not only look stunning but also perform flawlessly across all devices. With a passion for clean code and a commitment to staying abreast of the latest industry trends.</p>
+      <p>I am dedicated to building a digital landscape that delights users and surpasses expectations. Join me on this journey of turning visions into reality, one line of code at a time. Let's collaborate and create a web experience that captivates, engages, and inspires.</p>
+      <p>Together, we can shape a better online world through the artistry of Front End Development.</p>
+    </div>
+
+  </section>
+  <!---services----------->
+  <section class="services">
+
+    <h1 class="specialTitle">
+      <div></div>
+      <span>Services</span>
+    </h1>
+    <div class="container">
+      <div class="card">
+        <h1 class="circle green">Landing Pages</h1>
+        <p>Master of captivating landing pages, your design prowess effortlessly transforms visitors into loyal customers.</p>
+      </div>
+      <!---r----------->
+      <div class="card">
+        <h1 class="circle blue">Portfolio Websites</h1>
+        <p>I can program your business gallery website, whether you are a developer or designer. I can build a website that expresses your personality and enables others to know your capabilities and and your previous work.</p>
+      </div>
+      <!---r----------->
+      <div class="card">
+        <h1 class="circle orange">Business Websites</h1>
+        <p>I can program your business website to increase your customers and help you achieve more profits, as well as to break into the world of technology and spread your business on a larger scale.</p>
+      </div>
+      <!---r----------->
+    </div>
+  </section>
+  <!---our skils----------->
+  <section class="our-skills">
+    <h1 class="specialTitle">
+      <div></div>
+      <span>Our Skills</span>
+    </h1>
+
+    <div class="container">
+
+      <div class="bar" data-content="HTML">
+        <div class="progress" data-progress="90%"></div>
+        <div class="number" data-progress="90%">0</div>
+      </div>
+    <!--------->
+      <div class="bar" data-content="CSS">
+        <div class="progress" data-progress="95%"></div>
+        <div class="number" data-progress="95%">0</div>
+      </div>
+    <!--------->
+      <div class="bar" data-content="JavaScript">
+        <div class="progress" data-progress="85%"></div>
+        <div class="number" data-progress="85%">0</div>
+      </div>
+    <!--------->
+    <div class="bar" data-content="Bootstrap">
+      <div class="progress" data-progress="80%"></div>
+      <div class="number" data-progress="80%">0</div>
+    </div>
+  <!--------->
+    <div class="bar" data-content="Sass">
+      <div class="progress" data-progress="75%"></div>
+      <div class="number" data-progress="75%">0</div>
+    </div>
+  <!--------->
+    </div>
+  </section>
+  <!---footer----------->
+  <script src="./javascript/master.js"></script>
+
+
+  <script>
+    /*___________________________________*/
+    let array_of_progresses = Array.from(document.querySelectorAll(".our-skills .container .bar .progress"));
+    let our_skills_section = document.querySelector(".our-skills");
+    let numbers = document.querySelectorAll(".our-skills .container .bar .number");
+    let started = false;
+    window.onscroll = () =>{
+      if(window.scrollY >= our_skills_section.offsetTop-400){
+        array_of_progresses.forEach((ele) =>{
+          ele.style.width = ele.dataset.progress;
+        });
+        //___________________________________
+        if(!started){
+          numbers.forEach((num) => increaseNumber(num));
+        };
+        started = true;
+
+      }
+    }
+    function increaseNumber(ele){
+      let x = parseInt(ele.textContent)
+      let goal = parseInt(ele.dataset.progress);
+      let counter = setInterval(() =>{
+        x++
+        ele.textContent = `${x}%`
+        if(x == goal){
+          clearInterval(counter)
+        }
+      },1000/goal)
+    }
+
+    /*___________________________________*/
+  </script>
+</body>

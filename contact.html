@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initiale-scale=1.0">
+    <title>a web site</title>
+    <!--main css file-->
+    <link rel="stylesheet" href="./CSS/style.css">
+    <!--font awesome L.B-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--normalise-->
+    <link rel="stylesheet" href="./CSS/normalise.css">
+  </head>
+</html>
+<body>
+  <!-------------contact_info had same style as about-info section------------>
+  <section class="about-info">
+    
+    <div class="container">
+      <h1>Contact</h1>
+      <p>Say hello to get in touch with us. We would be delighted to connect with you.</p>
+      <h2>phone</h2>
+      <p>+213 555 41 42 04</p>
+      <h2>email</h2>
+      <p>
+        <a id="send-email" href="#">hamzimohamedreda@gmail.com</a>
+      </p>
+    </div>
+    
+  </section>
+  <script src="./javascript/master.js"></script>
+  <script>
+    document.getElementById('send-email').addEventListener('click', function() {
+      var targetEmail = 'hamzimohamedreda@gmail.com';
+      var subject = 'Hello!';
+      var body = 'Write your message here.';
+  
+      var mailtoLink = 'mailto:' + targetEmail + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  
+      window.location.href = mailtoLink;
+  });
+
+  </script>
+</body>

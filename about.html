@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initiale-scale=1.0">
+    <title>about</title>
+    <!--main css file-->
+    <link rel="stylesheet" href="./CSS/style.css">
+    <!--font awesome L.B-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--normalise-->
+    <link rel="stylesheet" href="./CSS/normalise.css">
+  </head>
+</html>
+<body>
+  <!---------------------------------->
+  <section class="about-info">
+
+    <div class="container">
+      <h1>About</h1>
+      <p>Welcome to my portfolio website! As a front-end web developer with a creative flair, I am dedicated to crafting captivating and user-friendly digital experiences.</p>
+      <p>With a keen eye for design and a passion for coding, I specialize in turning ideas into interactive realities.</p>
+      <p>Explore my showcase of innovative projects, each meticulously crafted to showcase my expertise in HTML, CSS, JavaScript, Bootstrap, and more.</p>
+      <p>Join me on this journey of innovation and let's build the future of web together. Together, let's create impressive front-end solutions that leave a lasting impact!</p>
+    </div>
+
+  </section>
+  <!---------------------------------->
+  <section class="scroll">
+      <h1 class="specialTitle">
+        <div></div>
+        <span>Our Values</span>
+      </h1>
+    <div class="container">
+
+      <span class="right"><i class="fa-solid fa-chevron-right"></i></span>
+
+      <span class="left"><i class="fa-solid fa-chevron-left"></i></span>
+      <div class="slider">
+
+      <!---------------------------------->
+         <div class="slide">
+           <h1>O1</h1>
+           <h2>Be Diffrent</h2>
+           <p>We approach life & work with an unique perspective.</p>
+         </div>
+      <!---------------------------------->
+      <!---------------------------------->
+         <div class="slide">
+           <h1>O2</h1>
+           <h2>Be Honest</h2>
+           <p>We believe in integrity over embellishment and clarity over ambiguity.</p>
+         </div>
+      <!---------------------------------->
+      <!---------------------------------->
+         <div class="slide">
+           <h1>O3</h1>
+           <h2>Be Mainingful</h2>
+           <p>We strive to create lasting value in everything we do.</p>
+         </div>
+      <!---------------------------------->
+      <!---------------------------------->
+         <div class="slide">
+           <h1>O4</h1>
+           <h2>Be Passionate</h2>
+           <p>We take a stand for what we believe is right.</p>
+         </div>
+      <!---------------------------------->
+
+      </div>
+
+
+
+    </div>
+  </section>
+  <script src="./javascript/master.js"></script>
+  <script>
+    /*___________________________________*/
+
+    let slides = document.querySelectorAll(".scroll .container .slider .slide")
+    let right = document.querySelector(".scroll .container .right");
+    let left = document.querySelector(".scroll .container .left");
+    let scroll_container = document.querySelector(".scroll .container");
+
+    right.addEventListener("click",() =>{
+      scroll_container.scrollBy({
+        top: 0,
+        left: document.querySelector(".scroll .container .slider .slide").clientWidth,
+        behaviour: "smouth",
+      })
+    });
+    left.addEventListener("click",() =>{
+      scroll_container.scrollBy({
+        top: 0,
+        left: -document.querySelector(".scroll .container .slider .slide").clientWidth,
+        behaviour: "smouth",
+      })
+    });
+  </script>
+</body>
